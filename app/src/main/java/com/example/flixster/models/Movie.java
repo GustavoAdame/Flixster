@@ -15,7 +15,6 @@ public class Movie {
 
     /* Default constructor to parse JSON objects */
     public Movie(JSONObject jsonObject) throws JSONException {
-
         /* Storing Parsed objects to be referenced in MainActivity */
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
@@ -24,7 +23,6 @@ public class Movie {
 
     /* This method returns a List of movie objects */
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
-
         List<Movie> movies = new ArrayList<>();
         for (int i = 0; i < movieJsonArray.length(); i++) {
             /* Adding at each postion in JSONArray into ArrayList movies */
