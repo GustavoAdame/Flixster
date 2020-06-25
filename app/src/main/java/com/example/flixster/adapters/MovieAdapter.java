@@ -1,6 +1,7 @@
 package com.example.flixster.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,14 +13,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.flixster.MovieDetailsActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
 public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> {
     /* Must need objects to properly displaying the ViewAdapter */
-    private Context context;
+    public Context context;
     private List<Movie> movies;
 
     /* Default constructor for passing in necessary objects */
@@ -53,12 +57,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
         return movies.size();
     }
 
-    /* ViewHolder Class - standard in implementing an adapter */
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    /* ViewHolder Class - standard in implementing an adapter and implements View.OnClickListener */
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         /* Member Variables */
-        private TextView tvTitle;
-        private TextView tvOverview;
-        private ImageView ivPoster;
+        public TextView tvTitle;
+        public TextView tvOverview;
+        public ImageView ivPoster;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -66,6 +70,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
+            /* itemView's OnClickListener */
+            itemView.setOnClickListener(this);
         }
 
         /* This method is used to populate each view */
@@ -86,6 +92,26 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
             /* Use Glide library to render remote images */
             Glide.with(context).load(imageUrl).into(ivPoster);
+
+        }
+
+        /* When the user clicks on a row, show MovieDetailsActivity for the selected movie */
+        @Override
+        public void onClick(View view) {
+            /* Gets item position */
+            int position = getAdapterPosition();
+
+            /* Make sure the position is valid */
+            if (position != RecyclerView.NO_POSITION) {
+                /* Get the movie at the position, this won't work if the class is static */
+                Movie movie = movies.get(position);
+                /* Create intent for the new activity */
+                Intent intent = new Intent(context, MovieDetailsActivity.class);
+                /* Serialize the movie using parceler, use its short name as a key */
+                intent.putExtra(Movie.class.getSimpleName(), Parcels.wrap(movie));
+                /* Show the activity */
+                context.startActivity(intent);
+            }
 
         }
     }
