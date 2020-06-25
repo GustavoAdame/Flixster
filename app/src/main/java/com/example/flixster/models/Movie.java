@@ -10,6 +10,7 @@ import java.util.List;
 public class Movie {
     /* Global String variable */
     private String posterPath;
+    private String backdropPath;
     private String title;
     private String overview;
 
@@ -19,6 +20,7 @@ public class Movie {
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
+        backdropPath = jsonObject.getString("backdrop_path");
     }
 
     /* This method returns a List of movie objects */
@@ -29,6 +31,11 @@ public class Movie {
             movies.add(new Movie(movieJsonArray.getJSONObject(i)));
         }
         return movies;
+    }
+
+    public String getBackdropPath() {
+        /* API configuration for image poster and appending relative paths */
+        return String.format("https://image.tmdb.org/t/p/w342/%s", backdropPath);
     }
 
     public String getPosterPath() {
