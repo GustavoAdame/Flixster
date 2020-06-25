@@ -19,18 +19,22 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
         android:layout_toRightOf="@+id/ivPoster"
         tools:text="The Gentlemen" />
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="234dp"
+        android:textSize="16dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"

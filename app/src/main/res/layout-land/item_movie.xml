@@ -18,6 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
         android:textSize="24dp"
         android:layout_toRightOf="@+id/ivPoster"
         tools:text="The Gentlemen" />
@@ -25,6 +27,8 @@
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="234dp"
+        android:textSize="16dp"
+        android:textColor="@android:color/white"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvTitle"
         android:layout_alignParentEnd="true"
