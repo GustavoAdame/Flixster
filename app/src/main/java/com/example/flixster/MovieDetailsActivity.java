@@ -35,6 +35,7 @@ public class MovieDetailsActivity  extends AppCompatActivity {
     public TextView tvTitle;
     public ImageView ivBackdrop;
     public TextView tvOverview;
+    public TextView tvRelease;
     public RatingBar rbVoteAverage;
     /* Important Key - Used to get video from MovieDB API */
     public String videoKey;
@@ -51,6 +52,7 @@ public class MovieDetailsActivity  extends AppCompatActivity {
         tvTitle = findViewById(R.id.tvTitle);
         tvOverview = findViewById(R.id.tvOverview);
         rbVoteAverage = findViewById(R.id.rbVoteAverage);
+        tvRelease = findViewById(R.id.tvRelease);
 
         /* Important API Request - get video for each movie via movie.getId() */
         Video_URL =
@@ -59,6 +61,7 @@ public class MovieDetailsActivity  extends AppCompatActivity {
         /* Set the title and overview */
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
+        tvRelease.setText("Release Date: " + movie.getReleaseDate());
 
         /* Vote average is 0..10, convert to 0..5 by dividing by 2 */
         float voteAverage = movie.getVoteAverage().floatValue();

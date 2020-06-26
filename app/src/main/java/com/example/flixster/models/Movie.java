@@ -18,6 +18,7 @@ public class Movie {
     public String title;
     public String overview;
     public Double voteAverage;
+    public String releaseDate;
     public int id;
 
     /* no-arg, empty constructor required for Parceler */
@@ -32,6 +33,11 @@ public class Movie {
         backdropPath = jsonObject.getString("backdrop_path");
         voteAverage = jsonObject.getDouble("vote_average");
         id = jsonObject.getInt("id");
+        releaseDate = jsonObject.getString("release_date");
+    }
+
+    public String getReleaseDate() {
+        return releaseDate;
     }
 
     public Double getVoteAverage() {
