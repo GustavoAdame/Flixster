@@ -38,6 +38,7 @@ Here's a walkthrough of implemented user stories:
    <img width="100%" height="450" src="Flixster_Lan.gif">
    <br> <img width="100%" height="450" src="MovieTrailer-Lan.gif">
    <br> Required & Optional Features - Landscape <br>
+   <br>
    GIF created with [Kap](https://getkap.co/).
 </p>
 
