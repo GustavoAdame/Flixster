@@ -30,12 +30,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 <p align="center">
-   <img width=“50%” height="“50%” src="Flixster_Pro.gif">
-   <br> <img width=“50%” height="“50%” src="MovieTrailer-Pro.gif">
+ 
+   <img width=“25%” height="10%" src="Flixster_Pro.gif">
+   <br> <img width=“25%” height="10%" src="MovieTrailer-Pro.gif">
    <br> Required & Optional Features - Portait <br> <br> 
    
-   <img width="50%” height="50%” src="Flixster_Lan.gif">
-   <br> <img width="50%” height="50%” src="MovieTrailer-Lan.gif">
+   <img width="50%" height="75%" src="Flixster_Lan.gif">
+   <br> <img width="50%" height="75%" src="MovieTrailer-Lan.gif">
    <br> Required & Optional Features - Landscape <br> <br> 
  
    GIF created with [Kap](https://getkap.co/).
