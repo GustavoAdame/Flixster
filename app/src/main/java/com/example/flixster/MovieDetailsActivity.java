@@ -12,6 +12,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster.databinding.ActivityMainBinding;
@@ -22,6 +23,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.parceler.Parcels;
 
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 import okhttp3.Headers;
 
 public class MovieDetailsActivity  extends AppCompatActivity {
@@ -62,8 +64,11 @@ public class MovieDetailsActivity  extends AppCompatActivity {
         float voteAverage = movie.getVoteAverage().floatValue();
         rbVoteAverage.setRating(voteAverage = voteAverage > 0 ? voteAverage / 2.0f : voteAverage);
 
+        int radius = 30; /* corner radius, higher value = more rounded */
+        int margin = 10; /* crop margin, set to 0 for corners with no crop */
+
         /* Important: Renders image in this activty - this image is the one being clicked to fetch trailer */
-        Glide.with(MovieDetailsActivity.this).load(movie.getBackdropPath()).into(ivBackdrop);
+        Glide.with(MovieDetailsActivity.this).load(movie.getBackdropPath()).transform(new RoundedCornersTransformation(radius, margin)).into(ivBackdrop);
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(Video_URL, new JsonHttpResponseHandler() {
