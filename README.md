@@ -32,7 +32,7 @@ Here's a walkthrough of implemented user stories:
 <p align="center">
  
    <img width=“50%” height="900" src="Flixster_Portrait.gif">
-   <br> Required & Optional Features - Portrait <br> 
+   <br> Required & Optional Features - Portrait <br>  <br> 
    
    <img width="100%" height="450" src="Flixster_Landscape.gif">
    <br> Required & Optional Features - Landscape <br>
