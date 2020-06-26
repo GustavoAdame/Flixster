@@ -35,8 +35,8 @@ Here's a walkthrough of implemented user stories:
    <img width=“50%” height="900" src="MovieTrailer-Pro.gif">
    <br> Required & Optional Features - Portait <br> <br> 
    
-   <img width="100%" height="50%" src="Flixster_Lan.gif">
-   <br> <img width="100%" height="50%" src="MovieTrailer-Lan.gif">
+   <img width="100%" height="450" src="Flixster_Lan.gif">
+   <br> <img width="100%" height="450" src="MovieTrailer-Lan.gif">
    <br> Required & Optional Features - Landscape <br>
    GIF created with [Kap](https://getkap.co/).
 </p>
