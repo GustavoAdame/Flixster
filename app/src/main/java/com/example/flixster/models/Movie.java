@@ -1,5 +1,7 @@
 package com.example.flixster.models;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +18,7 @@ public class Movie {
     public String title;
     public String overview;
     public Double voteAverage;
+    public int id;
 
     /* no-arg, empty constructor required for Parceler */
     public Movie() {}
@@ -28,10 +31,16 @@ public class Movie {
         overview = jsonObject.getString("overview");
         backdropPath = jsonObject.getString("backdrop_path");
         voteAverage = jsonObject.getDouble("vote_average");
+        id = jsonObject.getInt("id");
     }
 
     public Double getVoteAverage() {
         return voteAverage;
+    }
+
+    /* Used to get ID of a certain movie - used for Movie Trailer */
+    public int getId() {
+        return id;
     }
 
     /* This method returns a List of movie objects */

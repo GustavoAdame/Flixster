@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent"
     android:background="@android:color/black">
+
+    <ImageView
+        android:id="@+id/ivBackdrop"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
 
     <TextView
         android:id="@+id/tvTitle"
@@ -12,11 +18,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="250dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
         android:text="Movie Title"
         android:textAppearance="@android:style/TextAppearance.Large"
         android:textColor="@android:color/white" />
@@ -30,11 +36,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="6dp"
-        android:layout_marginLeft="6dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginRight="6dp"
         android:text="TextView"
         android:textColor="@android:color/white" />
 
@@ -47,8 +53,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginTop="5dp"
         android:numStars="5"
         android:outlineAmbientShadowColor="@android:color/white"
         android:stepSize="0.5" />

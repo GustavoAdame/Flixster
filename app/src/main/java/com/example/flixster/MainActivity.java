@@ -24,8 +24,6 @@ import okhttp3.Headers;
 public class MainActivity extends AppCompatActivity {
     /* String constant for API key */
     public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=57012594aa33de542798335f5dbb10ce&language=en-US&page=1";
-    /* String constant for MainActivity for ease of use */
-    public static final String TAG = "MainActivity";
     /* Memeber variable */
     private List<Movie> movies;
     private RecyclerView rvMovies;
@@ -50,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
         client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
-                Log.d(TAG, "onSuccess");
                 /* Get the JSON object for data */
                 JSONObject jsonObject = json.jsonObject;
                 /* Parse the JSON object within try_catch */
@@ -61,13 +58,12 @@ public class MainActivity extends AppCompatActivity {
                     /* Calling method to update the Adapter */
                     movieAdapter.notifyDataSetChanged();
                 } catch (JSONException e) {
-                    Log.e(TAG, "JSON Expection", e);
+                    Log.e("Gustavo", "JSON Expection", e);
                 }
             }
-
             @Override
             public void onFailure(int statusCode, Headers headers, String response, Throwable throwable) {
-                Log.d(TAG, "onSuccess");
+                Log.d("Gustavo", "onSuccess");
             }
         });
     }
