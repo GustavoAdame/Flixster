@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.flixster.adapters.MovieAdapter;
+import com.example.flixster.databinding.ActivityMainBinding;
 import com.example.flixster.models.Movie;
 
 import org.json.JSONArray;
@@ -28,10 +30,20 @@ public class MainActivity extends AppCompatActivity {
     private List<Movie> movies;
     private RecyclerView rvMovies;
 
+    /* Set up an instance of the binding class */
+    private ActivityMainBinding activityMainBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        /* Call the static inflate() method included in the generated binding class */
+        activityMainBinding = ActivityMainBinding.inflate(getLayoutInflater());
+
+        /* Get a reference to the root view by either calling the getRoot() method  */
+        View view = activityMainBinding.getRoot();
+
+        /* Pass the root view to setContentView() to make it the active view on the screen */
+        setContentView(view);
         rvMovies = findViewById(R.id.rvMovies);
         movies = new ArrayList<>();
 
